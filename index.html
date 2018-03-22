@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<body>
+
+<h1 style="text-align:center">My Portfolio</h1>
+<h2>About me</h2>
+<div id="info">
+<p>I am Nabila Amdouni<br/> <br/>These are some of the application that I <br/> practice on its, during this first period of <br/>Initiative with the help of coaches Mohamed<br/> Alhakem and Yasser Alnajar and this profile <br/> summarize these works, you can click on any <br/>images to open the concerned Website</p>
+</div>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <a href="http://one-million-arab-coder.bitballoon.com/"target="_blank"><img src="images/moubadara.png" style="width:100%; height:400px"></a>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <a href="http://designf.bitballoon.com/"target="_blank"><img src="images/facebook.png" style="width:100%; height:400px"></a>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <a href="http://design-image-hover.bitballoon.com/"target="_blank"><img src="images/imagehover.png" style="width:100%; height:400px"></a>
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <a href="http://nabila-project.bitballoon.com/"target="_blank"><img src="images/login.png" style="width:100%; height:400px"></a>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <a href="http://profile-cv.bitballoon.com/"target="_blank"><img src="images/cv.png" style="width:100%; height: 400px"></a>
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <a href="http://creative-arab-coders.bitballoon.com/"target="_blank"><img src="images/study.png" style="width:100%; height:300px"></a>
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/moubadara.png" style="width:100%; height: 150px" onclick="currentSlide(1)" alt="One Million Arab Coders">
+    </div>
+    <div class="column">
+       <img class="demo cursor" src="images/facebook.png" style="width:100%; height: 150px" onclick="currentSlide(2)" alt="Facebook">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/imagehover.png" style="width:100%; height: 150px" onclick="currentSlide(3)" alt="Image hover">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/login.png" style="width:100%; height: 150px" onclick="currentSlide(4)" alt="Login register">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/cv.png" style="width:100%; height: 150px" onclick="currentSlide(5)" alt="CV-Profile card">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="images/study.png" style="width:100%; height: 150px" onclick="currentSlide(6)" alt="Slideshow">
+    </div>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
+</html>
